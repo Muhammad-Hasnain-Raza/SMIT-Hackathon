@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Welcome to the Portal</h1>
+        <div class="text-center mb-4">
+            <button id="admissionPortalBtn" class="btn btn-primary">Admission Portal</button>
+            <br>
+            <button id="studentPortalBtn" class="btn btn-secondary">Student Portal</button>
+        </div>
+
+        <div id="admissionPortal" style="display:none;">
+            <h2>Add Students</h2>
+            <form id="addStudentForm">
+                <input type="text" class="form-control mb-2" id="firstName" placeholder="First Name" required>
+                <input type="text" class="form-control mb-2" id="lastName" placeholder="Last Name" required>
+                <input type="email" class="form-control mb-2" id="email" placeholder="Email" required>
+                <input type="password" class="form-control mb-2" id="password" placeholder="Password" required>
+                <input type="text" class="form-control mb-2" id="cnic" placeholder="CNIC" required>
+                <input type="hidden" id="userType" value="Student">
+                <button type="submit" id="addBtn" class="btn btn-success">Add Student</button>
+            </form>
+            <div id="studentMessage"></div>
+
+            <h2 class="mt-4">Upload Student Marks</h2>
+            <form id="uploadMarksForm">
+                <input type="text" class="form-control mb-2" id="course" placeholder="Course" required>
+                <input type="text" class="form-control mb-2" id="studentId" placeholder="Student ID" required>
+                <input type="number" class="form-control mb-2" id="marks" placeholder="Marks" required>
+                <input type="number" class="form-control mb-2" id="totalMarks" placeholder="Total Marks" required>
+                <input type="text" class="form-control mb-2" id="grade" placeholder="Grade" required>
+                <button type="submit" id="uploadBtn" class="btn btn-success">Upload Marks</button>
+            </form>
+            <div id="marksMessage"></div>
+        </div>
+
+        <div id="studentPortal" style="display:none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" class="form-control mb-2" id="loginEmail" placeholder="Email" required>
+                <input type="password" class="form-control mb-2" id="loginPassword" placeholder="Password" required>
+                <button type="submit" id="loginBtn" class="btn btn-primary">Login</button>
+            </form>
+            <div id="loginMessage" class="text-danger"></div>
+
+            <div id="editProfileSection" style="display:none;">
+                <h2>Edit Profile</h2>
+                <form id="editProfileForm">
+                    <input type="text" class="form-control mb-2" id="editCnic" placeholder="CNIC" required>
+                    <input type="text" class="form-control mb-2" id="editFirstName" placeholder="First Name" required>
+                    <input type="text" class="form-control mb-2" id="editLastName" placeholder="Last Name" required>
+                    <button type="submit" class="btn btn-success">Update Profile</button>
+                </form>
+            </div>
+
+            <h2 class="mt-4">Check Result</h2>
+            <form id="resultForm">
+                <input type="text" class="form-control mb-2" id="resultCnic" placeholder="Enter CNIC" required>
+                <button type="submit" id="resultBtn" class="btn btn-primary">Find Result</button>
+            </form>
+            <div id="resultMessage"></div>
+        </div>
+    </div>
+
+    <script type="module" src="firebase/firebaseConfig.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
